@@ -1,1 +1,20 @@
 pgn-extract.exe
+.idea/
+.ipynb_checkpoints/
+Network.ipynb
+__pycache__/
+a.txt
+chess_functions.ipynb
+chessfunc.ipynb
+docs/
+filter_pgn.ipynb
+jumulti132.py
+log.txt
+npz_catalog.txt
+older versions/
+pgn_catalog.txt
+pgn_npz_tag_files/
+statistics/
+universal processing-1 out 32 moves accepted.ipynb
+universal processing-Copy1.ipynb
+
