@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/website2.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+
+<style>
+.text {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+</style>
+
+</head>
+
+<body class="homepage">
+<main>
+
+<div class="topnav">
+  <a href="main.html">Play the AI</a>
+  <a class="active" href="about.html">About</a>
+</div>
+
+
+<div class="text">
+
+<h1>About</h1>
+
+<p>This is a neural network trained on a subset of the 
+<a href="https://database.lichess.org/" target="_blank">lichess game database</a>.
+The network architecture is similar to that of <a href="https://arxiv.org/abs/2006.01855" target="_blank">maia</a>: 
+a convolutional neural network with additional squeeze and excitation layers.
+</p>
+<p>
+At present, the system does not play at the level of the games it was trained on. 
+This is not a limitation of neural networks, per se. 
+Neural network based chess engines are known to be able to reach superhuman levels. 
+However they heavily depend on search to iterate over a large number of positions selecting the best one. 
+This works great when you aim to find the objectively best move. 
+</p>
+
+<p>
+However, the aim here is human-like play so it is less obvious how to implement search.
+We would have to additionally estimate how far ahead the player is likely to plan and what moves they will spot/miss. 
+Making the network play as good as expert humans would require solving this problem.
+</p>
+
+<p>
+Overall, the network isn't terrible. It plays very well in the opening(persumably in large part due to memorization) but 
+occasionally fails to see even one move ahead.
+</p>
+
+</div>
+
+</main>
+
+
+
+<script>
+
+
+</script>
+</body>
+</html>

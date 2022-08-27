@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/website2.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+</head>
+
+<body class="homepage">
+<main>
+
+<div class="topnav">
+  <a class="active" href="main.html">Play the AI</a>
+  <a href="about.html">About</a>
+</div>
+
+<div class="boardclass">
+    <div id="myBoard"></div>
+	
+	<label for="elo">Elo:</label>
+	<input type="number"
+		id="elo"
+		min="1400"
+		max="2600"
+		step="50"
+		value="1400">
+	
+	<button onclick="reset()"> Reset </button>
+	<button onclick="input_fen()"> FEN </button>
+	<button onclick="takeback()"> Takeback </button>
+	
+	
+</div>
+
+
+
+</main>
+
+
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/prettify.min.js"></script>
+<script src="js/data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js" integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+<script>
+
+var board = null
+var game = new Chess()
+
+function takeback() {
+
+	game.undo()
+	game.undo()
+	board.position(game.fen())
+	
+	console.log('takeback function triggered')
+	SendPython('takeback')
+}
+
+function input_fen() {
+	// r1bqkbnr/pp2pppp/2np4/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R w KQkq - 0 4 example fen
+	let fen = prompt("Please enter FEN", "");
+	
+	if (fen != null) {
+	game = new Chess(fen)
+	board.position(fen)
+			
+	SendPython('fen '+fen)
+	}
+	
+}
+
+function reset () {
+	game = new Chess()
+	board.position(game.fen())
+			
+	SendPython('init')
+}
+
+function onDragStart (source, piece, position, orientation) {
+  // do not pick up pieces if the game is over
+  if (game.game_over()) return false
+
+  // only pick up pieces for White
+  if (piece.search(/^b/) !== -1) return false
+}
+
+function makeRandomMove () {
+  var possibleMoves = game.moves()
+  
+  
+
+  // game over
+  if (possibleMoves.length === 0) return
+
+  var randomIdx = Math.floor(Math.random() * possibleMoves.length)
+  game.move(possibleMoves[randomIdx])
+  console.log(possibleMoves[randomIdx])
+  board.position(game.fen())
+}
+
+
+
+function onDrop (source, target) {
+  // see if the move is legal
+  var player_move = game.move({
+    from: source,
+    to: target,
+    promotion: 'q' // NOTE: always promote to a queen for example simplicity
+  })
+
+  // illegal move
+  if (player_move === null) return 'snapback'
+
+  //sendmove(move)
+  //console.log(move)
+
+
+  window.setTimeout(function(){
+	console.log('elo '+document.getElementById("elo").value.toString());
+    SendPython('elo '+document.getElementById("elo").value.toString());
+	SendPython(player_move);
+	
+  }, 250)
+}
+
+// update the board position after the piece snap
+// for castling, en passant, pawn promotion
+function onSnapEnd () {
+  board.position(game.fen())
+}
+
+var config = {
+  draggable: true,
+  position: 'start',
+  onDragStart: onDragStart,
+  onDrop: onDrop,
+  onSnapEnd: onSnapEnd
+}
+board = Chessboard('myBoard', config)
+SendPython('init')
+
+</script>
+</body>
+</html>
