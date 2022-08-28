@@ -14,3 +14,19 @@ Learning about neural networks gave me the idea to make a chess engine that play
 
 The largest source of human games is the [lichess database](https://database.lichess.org/) where one can download in excess of 3 billion standard games. Processing them requires the [`pgn-extract`](https://www.cs.kent.ac.uk/people/staff/djb/pgn-extract/) tool in the path.
 
+
+### Filter pgn
+
+You can filter your pgn files with filter_pgn.ipynb according to your chosen conditions. The tags I used are in pgn_npz_tag_files folder.
+
+### Generating tensor database
+
+To convert pgn files to tensors use generate.ipynb
+
+### Training
+
+Initializing and training of the network is don in training.ipynb
+
+### Play
+
+You can play against the trained network through your browser. To do so, click interface/start.bat (for windows)
