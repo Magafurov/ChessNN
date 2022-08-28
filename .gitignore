@@ -7,7 +7,6 @@ a.txt
 chess_functions.ipynb
 chessfunc.ipynb
 docs/
-filter_pgn.ipynb
 jumulti132.py
 log.txt
 npz_catalog.txt
@@ -19,3 +18,4 @@ universal processing-1 out 32 moves accepted.ipynb
 universal processing-Copy1.ipynb
 mixer.ipynb
 Network with history.ipynb
+universal_processing.ipynb
