@@ -28,3 +28,4 @@ pgn_npz_tag_files/small_test_0.npz
 pgn_npz_tag_files/tagsNot.txt
 pgn_npz_tag_files/tagsZply.txt
 pgn_npz_tag_files/unshuffled_test_with_boards_0.npz
+interface/start_only_py.bat
