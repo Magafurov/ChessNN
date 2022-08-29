@@ -2,7 +2,7 @@
 
 ChessNN is a neural network explicitly designed to play chess in a more human-like way. It was trained on a small subset of the [lichess game database](https://database.lichess.org/). The network is similar in architecture to [maia](https://arxiv.org/abs/2006.01855): It is a convolutional neural network with additional squeeze and excitation layers.
 
-Overall, the trained network isn't terrible at chess. It plays very well in the opening(persumably in large part due to memorization) and usually makes reasonable moves in the middle-game. However, it is bad at planning ahead and occasionally fails to see even one move ahead. This is likely because (unlike all decent chess engines) there is no search implemented in favour of human-like cognition. 
+Overall, the trained network isn't terrible at chess. It plays very well in the opening (persumably in large part due to memorization) and usually makes reasonable moves in the middle-game. However, it is bad at planning ahead and occasionally fails to see even one move ahead. This is likely because (unlike all decent chess engines) there is no search implemented in favour of human-like cognition. 
 
 I used [chessboardjs](https://github.com/oakmac/chessboardjs) and 
 [chess.js](https://github.com/jhlywa/chess.js) for the browser interface
