@@ -25,7 +25,7 @@ pip install tensorflow numpy chess flask flask_cors
 ## How to play
 
 You can play against the trained network through your browser. 
-To do so run python_backend.py and click main.html
+To do so run `python_backend.py` and click `main.html`
 
 ```
 python <dir>\ChessNN\interface\python_backend.py
@@ -42,13 +42,13 @@ Processing them requires the
 
 ### Filter pgn
 
-You can filter your pgn files with filter_pgn.ipynb according to your chosen conditions (elo range, time controls). The tags I used are in pgn_npz_tag_files folder.
+You can filter your pgn files with `filter_pgn.ipynb` according to your chosen conditions (elo range, time controls). The tags I used are in `\pgn_npz_tag_files`.
 
 ### Generating tensor database
 
-To convert pgn files to tensors use generate.ipynb
+To convert pgn files to tensors use `generate.ipynb`
 
 ### Training
 
-Initializing and training of the network is done in training.ipynb
+Initializing and training of the network is done in `training.ipynb`
 
