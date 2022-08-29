@@ -9,7 +9,7 @@ I used [chessboardjs](https://github.com/oakmac/chessboardjs) and
 
 ## Requirements
 This code was only tested and intended for **Windows** machines. 
-To use this code you have to have a python distribution installed. Additionally you need:
+To use this code you have to have a python 3 distribution installed. Additionally you need:
 - python-chess
 - numpy
 - tensorflow
