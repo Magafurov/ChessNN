@@ -1,5 +1,5 @@
 import chess
-
+import pathlib
 import numpy as np
 
 import tensorflow as tf
@@ -7,7 +7,9 @@ import tensorflow as tf
 from chess_functions import split_dims, MoveTensorLegal, GetMaxMoveWithVal
 
 #model = tf.keras.models.load_model(r"D:\Chess_documents\J\modelJ2_5250.h5")
-model = tf.keras.models.load_model(r"model_2_112200.h5")
+model = tf.keras.models.load_model(str(pathlib.Path(__file__).parent.resolve())+"\\model_2_112200.h5")
+
+
 
 def process_board(board, elo):
 
