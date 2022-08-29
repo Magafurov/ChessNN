@@ -9,6 +9,9 @@ When I was younger, I remember playing Chess Titans——the chess game that cam
 
 Learning about neural networks gave me the idea to make a chess engine that plays like humans: one that can make interesting, bold moves but can overlook things the same way humans do. Searching online, I found that the [maia-chess](https://github.com/CSSLab/maia-chess/tree/3d1fa7512401a6792dc7e5cd21f52c684df55cc7) project embodied the same idea. This is my first github project, so as practise, I won't use any of their code. 
 
+I used [chessboardjs](https://github.com/oakmac/chessboardjs) and 
+[chess.js](https://github.com/jhlywa/chess.js) for the browser interface
+
 ## Requirements
 This code was only tested and intended for **Windows** machines. 
 To use this code you have to have a python distribution installed. Additionally you need:
@@ -26,8 +29,9 @@ pip install tensorflow numpy chess flask flask_cors
 ## How to play
 
 You can play against the trained network through your browser. 
-To do so run `python_backend.py` and click `main.html`
+To do so, run `python_backend.py` and click `main.html`
 
+You can run `python_backend.py` through the command line with:
 ```
 python <dir>\ChessNN\interface\python_backend.py
 ```
@@ -47,7 +51,7 @@ You can filter your pgn files with `filter_pgn.ipynb` according to your chosen c
 
 ### Generating tensor database
 
-To convert pgn files to tensors use `generate.ipynb`
+To convert pgn files to tensors for training use `generate.ipynb`
 
 ### Training
 
