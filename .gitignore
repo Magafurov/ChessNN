@@ -12,10 +12,19 @@ log.txt
 npz_catalog.txt
 older versions/
 pgn_catalog.txt
-pgn_npz_tag_files/
 statistics/
 universal processing-1 out 32 moves accepted.ipynb
 universal processing-Copy1.ipynb
 mixer.ipynb
 Network with history.ipynb
 universal_processing.ipynb
+pgn_npz_tag_files/1000games.pgn
+pgn_npz_tag_files/100k_1400to2600.pgn
+pgn_npz_tag_files/100k_2000to2600.pgn
+pgn_npz_tag_files/1eval_game.pgn
+pgn_npz_tag_files/2000_to_2600_0.npz
+pgn_npz_tag_files/4games.pgn
+pgn_npz_tag_files/small_test_0.npz
+pgn_npz_tag_files/tagsNot.txt
+pgn_npz_tag_files/tagsZply.txt
+pgn_npz_tag_files/unshuffled_test_with_boards_0.npz

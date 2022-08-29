@@ -17,7 +17,7 @@ The largest source of human games is the [lichess database](https://database.lic
 
 ### Filter pgn
 
-You can filter your pgn files with filter_pgn.ipynb according to your chosen conditions. The tags I used are in pgn_npz_tag_files folder.
+You can filter your pgn files with filter_pgn.ipynb according to your chosen conditions (elo range, time controls). The tags I used are in pgn_npz_tag_files folder.
 
 ### Generating tensor database
 
@@ -25,8 +25,10 @@ To convert pgn files to tensors use generate.ipynb
 
 ### Training
 
-Initializing and training of the network is don in training.ipynb
+Initializing and training of the network is done in training.ipynb
 
 ### Play
 
 You can play against the trained network through your browser. To do so, click interface/start.bat (for windows)
+
+![Alt Text](Animation.gif)
